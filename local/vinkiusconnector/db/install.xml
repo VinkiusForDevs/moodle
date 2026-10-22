@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/vinkiusconnector/db" VERSION="20261023" COMMENT="Vinkius Connector tables">
+  <TABLES>
+    <TABLE NAME="local_vinkiusconnector_consents" COMMENT="Visitor consent records.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="external_id" TYPE="char" LENGTH="191" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="moodle_user_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="scopes" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="purpose" TYPE="char" LENGTH="64" NOTNULL="true" DEFAULT="agent_action" SEQUENCE="false"/>
+        <FIELD NAME="ip_hash" TYPE="char" LENGTH="64" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="created_at" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="revoked_at" TYPE="char" LENGTH="32" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="external_id" UNIQUE="false" FIELDS="external_id"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
