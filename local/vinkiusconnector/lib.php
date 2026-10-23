@@ -18,6 +18,7 @@ if (!defined('ABSPATH')) {
 
 // Autoloader for VinkiusConnector classes (kept under includes/).
 require_once __DIR__ . '/includes/autoload.php';
+if (class_exists('VinkiusConnector\Options')) { \VinkiusConnector\Options::ensure_defaults(); }
 
 // Compatibility shims for WordPress functions used by the ported code.
 if (!function_exists('__')) {
